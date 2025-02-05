@@ -8,9 +8,9 @@ const App = () => {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [cart, setCart] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-
+  const url = 'https://www.themealdb.com/api/json/v1/1/search.php?s='
   useEffect(() => {
-    fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=")
+    fetch(url)
       .then((res) => res.json())
       .then((data) => {
         if (data.meals) {
